@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <script>
+            function logindata(){
+                console.log("login")
+                let uemail = document.getElementById("text1").value
+                let upass =document.getElementById("text2").value
+                let mydata = localStorage.getItem("userobj")
+                let obj1 = JSON.parse(mydata)
+                console.log(uemail+" "+upass)
+                console.log(obj1.email+" " +obj1.password)
+                if(obj1.email!=null && obj1.password!=null){
+                    if(obj1.email==uemail && obj1.password==upass){
+                        alert("you have successfully login...")
+                    window.location="home.html"
+                    }else{
+                    window.location = "form.html"
+                    }
+                } 
+            }
+        </script>
+    </head>
+    <body>
+        email = <input type="text"id="text1"/> </br>
+        password = <input type="text" id="text2"/></br>
+        <input type="button" value="login" onclick="logindata()"/>
+    </body>
+</html>

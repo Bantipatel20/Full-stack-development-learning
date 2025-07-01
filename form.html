@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        
+    </head>
+    <body>
+        <h1>signup form</h1>
+        name :- <input type="text" id="text1"/></br>
+        email :- <input type="text" id="text2"/></br>
+        password :- <input type="text" id="text3"/></br>
+        mobilenumber :- <input type="text" id="text4"/></br>
+        <input type="button" value="sign up" onclick="setdata()"/>
+    </body>
+        <script>
+            function setdata(){
+                let uname=document.getElementById("text1").value
+                let uemail=document.getElementById("text2").value
+                let upass =document.getElementById("text3").value
+                let umobilenum =document.getElementById("text4").value
+                localStorage.setItem("name",uname)
+                localStorage.setItem("email",uemail)
+                localStorage.setItem("pass",upass)
+                localStorage.setItem("mobilenum",umobilenum)
+                let obj = {
+                    name:uname,
+                    email:uemail,
+                    password:upass,
+                    mobilenumber:umobilenum
+                };
+                let mydata = JSON.stringify(obj)
+                localStorage.setItem("userobj",mydata)
+            }
+        </script>
+</html>
