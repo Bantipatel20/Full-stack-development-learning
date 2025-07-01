@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+         <script>
+            function saveobj(){
+                let a = {
+                    name: "banti",
+                    gender: "male",
+                    age : 30,
+                    city:"surat",
+                    mobile:9726812910
+                };
+                var mydata = JSON.stringify(a)
+                localStorage.setItem("usera",mydata)
+            }
+            function savedata(){
+                localStorage.setItem("name","banti")
+                localStorage.setItem("city","surat")
+                document.getElementById("ans").innerHTML = "data saved"
+            }
+            function getdata(){
+                let a = localStorage.getItem("name")
+                console.log(a)
+                document.getElementById("ans").innerHTML="my name is " + a
+            }
+            function removedata(){
+                localStorage.removeItem("name")
+                localStorage.removeItem("city")
+                document.getElementById("ans").innerHTML="remove data"
+            }
+            function removealldata(){
+                localStorage.clear()
+                document.getElementById("ans").innerHTML=" clear all data"
+            }
+            function getobjdata(){
+                let x = localStorage.getItem("usera")
+                let mydata = JSON.parse(x)
+                console.log("data")
+                document.getElementById("ans").innerHTML="my name is "+mydata.name+" , my gende is "+ mydata.gender
+            }
+         </script>
+    </head>
+    <body>
+        <p id="ans"></p>
+        <input type='button', value="save" , onclick="savedata()"/>
+        <input type="button", value="get", onclick="getdata()"/>
+        <input type="button", value="remove" , onclick="removedata()"/>
+        <input type="button", value="removeall" onclick="removealldata()"/>
+        <input type="button", value="setobj", onclick="saveobj()"/>
+        <input type="button", value ="getobj", onclick="getobjdata()"/>
+
+        
+    </body>
+</html>
