@@ -1,0 +1,18 @@
+.date{
+    background-color: black;
+    color: white;
+    width: 5vw;
+    height: 10vh;
+    border-radius: 5px;
+    text-align: center;
+    align-items: center;
+}
+.month {
+    font-size: 12px;
+}
+.year{
+    font-size: 10px;
+}
+.date{
+    font-size: 20px;
+}
