@@ -7,7 +7,10 @@ require("dotenv").config()
 port = process.env.PORT || 3000
 
 app.use(express.json());
-app.use(fileupload());
+app.use(fileupload({
+  useTempFiles: true,      
+  tempFileDir: "/tmp/",    
+}));
 
 const db = require("./config/database")
 db.connectiondb();
