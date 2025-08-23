@@ -15,10 +15,10 @@ db.connectiondb();
 const cloudinary = require("./config/cloudinary");
 cloudinary.cloudinaryconnect();
 
-// const Upload = require("./routes/FileUpload");
-// app.use("/api/v1/upload",Upload)
+const Upload = require("./routes/FileUpload");
+app.use("/api/v1/upload",Upload)
 
-app.listen("/",()=>{
+app.listen(port,()=>{
     console.log(`server started on port ${port}`);
 })
 
