@@ -8,6 +8,6 @@ const {imageUpload,localFileUpload,videoUpload,imageSizeReducer} = require("../c
 router.post("/localfileupload",localFileUpload);
 router.post("/imageupload",imageUpload);
 router.post("/videoupload",videoUpload);
-router.post("/imagereducer",imageSizeReducer);
+// router.post("/imagereducer",imageSizeReducer);
 
 module.exports = router;
